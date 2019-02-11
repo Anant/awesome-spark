@@ -1,9 +1,12 @@
-[<img src="https://cdn.rawgit.com/awesome-spark/awesome-spark/master/spark-logo-trademark.png" align="right">](https://spark.apache.org/)
+[<img src="https://cdn.rawgit.com/awesome-spark/awesome-spark/f78a16db/spark-logo-trademark.svg" align="right">](https://spark.apache.org/)
 
 # Awesome Spark [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 A curated list of awesome [Apache Spark](https://spark.apache.org/) packages and resources.
 
+_Apache Spark is an open-source cluster-computing framework. Originally developed at the [University of California](https://www.universityofcalifornia.edu/), [Berkeley's AMPLab](https://amplab.cs.berkeley.edu/), the Spark codebase was later donated to the [Apache Software Foundation](https://www.apache.org/), which has maintained it since. Spark provides an interface for programming entire clusters with implicit data parallelism and fault-tolerance_  ([Wikipedia 2017](#wikipedia-2017)).
+
+Users of Apache Spark may choose between different the Python, R, Scala and Java programming languages to interface with the Apache Spark APIs.
 
 ## Contents
 
@@ -22,9 +25,13 @@ A curated list of awesome [Apache Spark](https://spark.apache.org/) packages and
   - [Natural Language Processing](#natural-language-processing)
   - [Streaming](#streaming)
   - [Interfaces](#interfaces)
+  - [Testing](#testing)
+  - [Web Archives](#web-archives)
+  - [Workflow Management](#workflow-management)
 
 - [Resources](#resources)
   - [Books](#books)
+  - [Papers](#papers)
   - [MOOCS](#moocs)
   - [Workshops](#workshops)
   - [Projects Using Spark](#projects-using-spark)
@@ -37,86 +44,108 @@ A curated list of awesome [Apache Spark](https://spark.apache.org/) packages and
 
 ### Language Bindings
 
-* [Flambo](https://github.com/yieldbot/flambo) - Clojure DSL.
-* [Mobius](https://github.com/Microsoft/Mobius) - C# bindings.
-* [sparklyr](https://github.com/rstudio/sparklyr) - An alternative R backend, using [`dplyr`](https://github.com/hadley/dplyr).
+* [Flambo](https://github.com/yieldbot/flambo) <img src="https://img.shields.io/github/last-commit/yieldbot/flambo.svg"> - Clojure DSL.
+* [Mobius](https://github.com/Microsoft/Mobius) <img src="https://img.shields.io/github/last-commit/Microsoft/Mobius.svg"> - C# bindings.
+* [sparklyr](https://github.com/rstudio/sparklyr) <img src="https://img.shields.io/github/last-commit/rstudio/sparklyr.svg"> - An alternative R backend, using [`dplyr`](https://github.com/hadley/dplyr).
+* [sparkle](https://github.com/tweag/sparkle) <img src="https://img.shields.io/github/last-commit/tweag/sparkle.svg"> - Haskell on Apache Spark.
 
 ### Notebooks and IDEs
 
-* [Apache Zeppelin](https://zeppelin.incubator.apache.org/) - Web-based notebook that enables interactive data analytics with plugable backends, integrated plotting, and extensive Spark support out-of-the-box.
-* [Spark Notebook](https://github.com/andypetrella/spark-notebook) - Scalable and stable Scala and Spark focused notebook bridging the gap between JVM and Data Scientists (incl. extendable, typesafe and reactive charts).
-* [sparkmagic](https://github.com/jupyter-incubator/sparkmagic) - [Jupyter](https://jupyter.org/) magics and kernels for working with remote Spark clusters, for interactively working with remote Spark clusters through [Livy](https://github.com/cloudera/livy), in Jupyter notebooks.
+* [Apache Zeppelin](https://zeppelin.incubator.apache.org/) <img src="https://img.shields.io/github/last-commit/apache/zeppelin.svg"> - Web-based notebook that enables interactive data analytics with plugable backends, integrated plotting, and extensive Spark support out-of-the-box.
+* [Spark Notebook](https://github.com/andypetrella/spark-notebook) <img src="https://img.shields.io/github/last-commit/spark-notebook/spark-notebook.svg"> - Scalable and stable Scala and Spark focused notebook bridging the gap between JVM and Data Scientists (incl. extendable, typesafe and reactive charts).
+* [sparkmagic](https://github.com/jupyter-incubator/sparkmagic) <img src="https://img.shields.io/github/last-commit/jupyter-incubator/sparkmagic.svg"> - [Jupyter](https://jupyter.org/) magics and kernels for working with remote Spark clusters, for interactively working with remote Spark clusters through [Livy](https://github.com/cloudera/livy), in Jupyter notebooks.
 
 ### General Purpose Libraries
 
-* [Succinct](http://succinct.cs.berkeley.edu/) - Support for efficient queries on compressed data.
+* [Succinct](http://succinct.cs.berkeley.edu/) <img src="https://img.shields.io/github/last-commit/amplab/succinct.svg">- Support for efficient queries on compressed data.
 
 
 ### SQL Data Sources
 
-* [Spark CSV](https://github.com/databricks/spark-csv) - CSV reader and writer (obsolete since Spark 2.0 [[SPARK-12833]](https://issues.apache.org/jira/browse/SPARK-12833)).
-* [Spark Avro](https://github.com/databricks/spark-avro) - [Apache Avro](https://avro.apache.org/) reader and writer.
-* [Spark XML](https://github.com/databricks/spark-xml) - XML parser and writer.
-* [Spark-Mongodb](https://github.com/Stratio/Spark-MongoDB) - MongoDB reader and writer.
-* [Spark Cassandra Connector](https://github.com/datastax/spark-cassandra-connector) - Cassandra support including data source and API and support for arbitrary queries.
-* [Spark Riak Connector](https://github.com/basho/spark-riak-connector) - Riak TS & Riak KV connector.
-* [Mongo-Spark](https://github.com/mongodb/mongo-spark) - Official MongoDB connector.
+* [Spark CSV](https://github.com/databricks/spark-csv) <img src="https://img.shields.io/github/last-commit/databricks/spark-csv.svg"> - CSV reader and writer (obsolete since Spark 2.0 [[SPARK-12833]](https://issues.apache.org/jira/browse/SPARK-12833)).
+* [Spark Avro](https://github.com/databricks/spark-avro) <img src="https://img.shields.io/github/last-commit/databricks/spark-avro.svg"> - [Apache Avro](https://avro.apache.org/) reader and writer.
+* [Spark XML](https://github.com/databricks/spark-xml) <img src="https://img.shields.io/github/last-commit/databricks/spark-xml.svg"> - XML parser and writer.
+* [Spark-Mongodb](https://github.com/Stratio/Spark-MongoDB) <img src="https://img.shields.io/github/last-commit/Stratio/Spark-MongoDB.svg"> - MongoDB reader and writer.
+* [Spark Cassandra Connector](https://github.com/datastax/spark-cassandra-connector) <img src="https://img.shields.io/github/last-commit/datastax/spark-cassandra-connector.svg"> - Cassandra support including data source and API and support for arbitrary queries.
+* [Spark Riak Connector](https://github.com/basho/spark-riak-connector) <img src="https://img.shields.io/github/last-commit/basho/spark-riak-connector.svg"> - Riak TS & Riak KV connector.
+* [Mongo-Spark](https://github.com/mongodb/mongo-spark) <img src="https://img.shields.io/github/last-commit/mongodb/mongo-spark.svg"> - Official MongoDB connector.
+* [OrientDB-Spark](https://github.com/orientechnologies/spark-orientdb) <img src="https://img.shields.io/github/last-commit/orientechnologies/spark-orientdb.svg"> - Official OrientDB connector.
 
 ### Bioinformatics
 
-* [ADAM](https://github.com/bigdatagenomics/adam) - Set of tools designed to analyse genomics data.
-* [Hail](https://github.com/hail-is/hail) - Genetic analysis framework.
+* [ADAM](https://github.com/bigdatagenomics/adam) <img src="https://img.shields.io/github/last-commit/bigdatagenomics/adam.svg"> - Set of tools designed to analyse genomics data.
+* [Hail](https://github.com/hail-is/hail) <img src="https://img.shields.io/github/last-commit/hail-is/hail.svg"> - Genetic analysis framework.
 
 ### GIS
 
-* [Magellan](https://github.com/harsha2010/magellan) - Geospatial analytics using Spark.
-* [GeoSpark](https://github.com/Sarwat/GeoSpark) - Cluster computing system for processing large-scale spatial data.
+* [Magellan](https://github.com/harsha2010/magellan) <img src="https://img.shields.io/github/last-commit/harsha2010/magellan.svg"> - Geospatial analytics using Spark.
+* [GeoSpark](https://github.com/Sarwat/GeoSpark) <img src="https://img.shields.io/github/last-commit/Sarwat/GeoSpark.svg"> - Cluster computing system for processing large-scale spatial data.
 
 ### Time Series Analytics
 
-* [Spark-Timeseries](https://github.com/cloudera/spark-timeseries) - Scala / Java / Python library for interacting with time series data on Apache Spark.
+* [Spark-Timeseries](https://github.com/cloudera/spark-timeseries) <img src="https://img.shields.io/github/last-commit/cloudera/spark-timeseries.svg"> - Scala / Java / Python library for interacting with time series data on Apache Spark.
+* [flint](https://github.com/twosigma/flint) <img src="https://img.shields.io/github/last-commit/twosigma/flint.svg"> - A time series library for Apache Spark.
 
 ### Graph Processing
 
-* [Mazerunner](https://github.com/neo4j-contrib/neo4j-mazerunner) - Graph analytics platform on top of Neo4j and GraphX.
-* [GraphFrames](https://github.com/graphframes/graphframes) - Data frame based graph API.
-* [neo4j-spark-connector](https://github.com/neo4j-contrib/neo4j-spark-connector) - Bolt protocol based, Neo4j Connector with RDD, DataFrame and GraphX / GraphFrames support.
+* [Mazerunner](https://github.com/neo4j-contrib/neo4j-mazerunner) <img src="https://img.shields.io/github/last-commit/neo4j-contrib/neo4j-mazerunner.svg"> - Graph analytics platform on top of Neo4j and GraphX.
+* [GraphFrames](https://github.com/graphframes/graphframes) <img src="https://img.shields.io/github/last-commit/graphframes/graphframes.svg"> - Data frame based graph API.
+* [neo4j-spark-connector](https://github.com/neo4j-contrib/neo4j-spark-connector) <img src="https://img.shields.io/github/last-commit/neo4j-contrib/neo4j-spark-connector.svg"> - Bolt protocol based, Neo4j Connector with RDD, DataFrame and GraphX / GraphFrames support.
+* [SparklingGraph](http://sparkling.ml) <img src="https://img.shields.io/github/last-commit/sparkling-graph/sparkling-graph.svg"> - Library extending GraphX features with multiple functionalities useful in graph analytics (measures, generators, link prediction etc.).
 
 ### Machine Learning Extension
 
-* [dbscan-on-spark](https://github.com/irvingc/dbscan-on-spark) - Implementation of the DBSCAN clustering algorithm on top of Apache Spark by [irvingc](https://github.com/irvingc) and based on the paper from He, Yaobin, et al. [MR-DBSCAN: a scalable MapReduce-based DBSCAN algorithm for heavily skewed data](https://www.researchgate.net/profile/Yaobin_He/publication/260523383_MR-DBSCAN_a_scalable_MapReduce-based_DBSCAN_algorithm_for_heavily_skewed_data/links/0046353a1763ee2bdf000000.pdf).
-* [Spark DBSCAN](https://github.com/alitouka/spark_dbscan) - Another implementation of the DBSCAN clustering algorithm by [alitouka](https://github.com/alitouka).
-* [Apache SystemML](https://systemml.apache.org/) - Declarative machine learning framework on top of Spark.
-* [Mahout Spark Bindings](https://mahout.apache.org/users/sparkbindings/home.html) - linear algebra DSL and optimizer with R-like syntax.
-* [spark-sklearn](https://github.com/databricks/spark-sklearn) - Scikit-learn integration with distributed model training.
+* [dbscan-on-spark](https://github.com/irvingc/dbscan-on-spark) <img src="https://img.shields.io/github/last-commit/irvingc/dbscan-on-spark.svg"> - An Implementation of the DBSCAN clustering algorithm on top of Apache Spark by [irvingc](https://github.com/irvingc) and based on the paper from He, Yaobin, et al. [MR-DBSCAN: a scalable MapReduce-based DBSCAN algorithm for heavily skewed data](https://www.researchgate.net/profile/Yaobin_He/publication/260523383_MR-DBSCAN_a_scalable_MapReduce-based_DBSCAN_algorithm_for_heavily_skewed_data/links/0046353a1763ee2bdf000000.pdf).
+* [Apache SystemML](https://systemml.apache.org/) <img src="https://img.shields.io/github/last-commit/apache/systemml.svg"> - Declarative machine learning framework on top of Spark.
+* [Mahout Spark Bindings](https://mahout.apache.org/users/sparkbindings/home.html) \[status unknown\] - linear algebra DSL and optimizer with R-like syntax.
+* [spark-sklearn](https://github.com/databricks/spark-sklearn) <img src="https://img.shields.io/github/last-commit/databricks/spark-sklearn.svg"> - Scikit-learn integration with distributed model training.
 * [KeystoneML](http://keystone-ml.org/) - Type safe machine learning pipelines with RDDs.
-* [JPMML-Spark](https://github.com/jpmml/jpmml-spark) - PMML transformer library for Spark ML.
-* [Distributed Keras](https://github.com/cerndb/dist-keras) - Distributed deep learning framework with PySpark and Keras.
+* [JPMML-Spark](https://github.com/jpmml/jpmml-spark) <img src="https://img.shields.io/github/last-commit/jpmml/jpmml-spark.svg"> - PMML transformer library for Spark ML.
+* [Distributed Keras](https://github.com/cerndb/dist-keras) <img src="https://img.shields.io/github/last-commit/cerndb/dist-keras.svg"> - Distributed deep learning framework with PySpark and Keras.
+* [ModelDB](https://mitdbg.github.io/modeldb) <img src="https://img.shields.io/github/last-commit/mitdbg/modeldb.svg"> - A system to manage machine learning models for `spark.ml` and [`scikit-learn`](https://github.com/scikit-learn/scikit-learn) <img src="https://img.shields.io/github/last-commit/scikit-learn/scikit-learn.svg">.
+* [Sparkling Water](https://github.com/h2oai/sparkling-water) <img src="https://img.shields.io/github/last-commit/h2oai/sparkling-water.svg"> -  [H2O](http://www.h2o.ai/) interoperability layer.
+* [BigDL](https://github.com/intel-analytics/BigDL) <img src="https://img.shields.io/github/last-commit/intel-analytics/BigDL.svg"> - Distributed Deep Learning library.
+* [MLeap](https://github.com/combust/mleap) <img src="https://img.shields.io/github/last-commit/combust/mleap.svg"> - Execution engine and serialization format which supports deployment of `o.a.s.ml` models without dependency on `SparkSession`.
 
 ### Middleware
 
-* [Livy](https://github.com/cloudera/livy) - REST server with extensive language support (Python, R, Scala), ability to maintain interactive sessions and object sharing.
-* [spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) - Simple Spark as a Service which supports objects sharing using so called named objects. JVM only.
-* [Mist](https://github.com/Hydrospheredata/mist) - Service for exposing Spark analytical jobs and machine learning models as realtime, batch or reactive web services.
-* [Apache Toree](https://github.com/apache/incubator-toree) - IPython protocol based middleware for interactive applications.
+* [Livy](https://github.com/cloudera/livy) <img src="https://img.shields.io/github/last-commit/cloudera/livy.svg"> - REST server with extensive language support (Python, R, Scala), ability to maintain interactive sessions and object sharing.
+* [spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) <img src="https://img.shields.io/github/last-commit/spark-jobserver/spark-jobserver.svg"> - Simple Spark as a Service which supports objects sharing using so called named objects. JVM only.
+* [Mist](https://github.com/Hydrospheredata/mist) <img src="https://img.shields.io/github/last-commit/Hydrospheredata/mist.svg"> - Service for exposing Spark analytical jobs and machine learning models as realtime, batch or reactive web services.
+* [Apache Toree](https://github.com/apache/incubator-toree) <img src="https://img.shields.io/github/last-commit/apache/incubator-toree.svg"> - IPython protocol based middleware for interactive applications.
 
 ### Utilities
 
-* [silex](https://github.com/willb/silex) - Collection of tools varying from ML extensions to additional RDD methods.
-* [sparkly](https://github.com/Tubular/sparkly) - Helpers & syntactic sugar for PySpark.
+* [silex](https://github.com/willb/silex) <img src="https://img.shields.io/github/last-commit/willb/silex.svg"> - Collection of tools varying from ML extensions to additional RDD methods.
+* [sparkly](https://github.com/Tubular/sparkly) <img src="https://img.shields.io/github/last-commit/Tubular/sparkly.svg"> - Helpers & syntactic sugar for PySpark.
+* [pyspark-stubs](https://github.com/zero323/pyspark-stubs) <img src="https://img.shields.io/github/last-commit/zero323/pyspark-stubs.svg"> - Static type annotations for PySpark.
+* [Flintrock](https://github.com/nchammas/flintrock) <img src="https://img.shields.io/github/last-commit/nchammas/flintrock.svg"> - A command-line tool for launching Spark clusters on EC2.
 
 ### Natural Language Processing
-
-* [spark-corenlp](https://github.com/databricks/spark-corenlp) - DataFrame wrapper for [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/).
+* [spark-corenlp](https://github.com/databricks/spark-corenlp) <img src="https://img.shields.io/github/last-commit/databricks/spark-corenlp.svg"> - DataFrame wrapper for [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/).
+* [spark-nlp](https://github.com/JohnSnowLabs/spark-nlp) <img src="https://img.shields.io/github/last-commit/JohnSnowLabs/spark-nlp.svg"> - Natural language processing library built on top of Apache Spark ML. 
 
 ### Streaming
 
-* [Apache Bahir](https://bahir.apache.org/) - Collection of the streaming connectors excluded from Spark 2.0 (Akka, MQTT, Twitter. ZeroMQ).
+* [Apache Bahir](https://bahir.apache.org/) <img src="https://img.shields.io/github/last-commit/apache/bahir.svg"> - Collection of the streaming connectors excluded from Spark 2.0 (Akka, MQTT, Twitter. ZeroMQ).
 
 ### Interfaces
 
-* [Apache Beam](https://beam.apache.org/) - Unified data processing engine supporting both batch and streaming applications. Apache Spark is one of the supported execution environments.
-* [Blaze](https://github.com/blaze/blaze) - Interface for querying larger than memory datasets using Pandas-like syntax. It supports both Spark `DataFrames` and `RDDs`.
+* [Apache Beam](https://beam.apache.org/) <img src="https://img.shields.io/github/last-commit/apache/beam.svg"> - Unified data processing engine supporting both batch and streaming applications. Apache Spark is one of the supported execution environments.
+* [Blaze](https://github.com/blaze/blaze) <img src="https://img.shields.io/github/last-commit/blaze/blaze.svg"> - Interface for querying larger than memory datasets using Pandas-like syntax. It supports both Spark `DataFrames` and `RDDs`.
+
+### Testing
+
+* [spark-testing-base](https://github.com/holdenk/spark-testing-base) <img src="https://img.shields.io/github/last-commit/holdenk/spark-testing-base.svg"> - Collection of base test classes.
+* [spark-fast-tests](https://github.com/MrPowers/spark-fast-tests) <img src="https://img.shields.io/github/last-commit/MrPowers/spark-fast-tests.svg"> - A lightweight and fast testing framework.
+
+### Web Archives
+
+* [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut) <img src="https://img.shields.io/github/last-commit/archivesunleashed/aut.svg"> -  Open-source toolkit for analyzing web archives.
+
+### Workflow Management
+
+* [Cromwell](https://github.com/broadinstitute/cromwell#spark-backend) <img src="https://img.shields.io/github/last-commit/broadinstitute/cromwell.svg"> - Workflow management system with [Spark backend](https://github.com/broadinstitute/cromwell#spark-backend).
 
 ## Resources
 
@@ -127,6 +156,11 @@ A curated list of awesome [Apache Spark](https://spark.apache.org/) packages and
 * [Mastering Apache Spark](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/) - Interesting compilation of notes by [Jacek Laskowski](https://github.com/jaceklaskowski). Focused on different aspects of Spark internals.
 * [Spark Gotchas](https://github.com/awesome-spark/spark-gotchas) - Subjective compilation of tips, tricks and common programming mistakes.
 * [Spark in Action](https://www.manning.com/books/spark-in-action) - New book in the Manning's "in action" family with +400 pages. Starts gently, step-by-step and covers large number of topics. Free excerpt on how to [setup Eclipse for Spark application development](http://freecontent.manning.com/how-to-start-developing-spark-applications-in-eclipse/) and how to bootstrap a new application using the provided Maven Archetype. You can find the accompanying GitHub repo [here](https://github.com/spark-in-action/first-edition).
+
+### Papers
+
+* [Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://people.csail.mit.edu/matei/papers/2012/nsdi_spark.pdf) - Paper introducing a core distributed memory abstraction.
+* [Spark SQL: Relational Data Processing in Spark](https://amplab.cs.berkeley.edu/wp-content/uploads/2015/03/SparkSQLSigmod2015.pdf) - Paper introducing relational underpinnings, code generation and Catalyst optimizer.
 
 ### MOOCS
 
@@ -158,11 +192,15 @@ A curated list of awesome [Apache Spark](https://spark.apache.org/) packages and
 - [Spark with Scala Gitter channel](https://gitter.im/spark-scala/Lobby) - "_A place to discuss and ask questions about using Scala for Spark programming_" started by [@deanwampler](https://github.com/deanwampler).
 - [Apache Spark User List](http://apache-spark-user-list.1001560.n3.nabble.com/) and [Apache Spark Developers List](http://apache-spark-developers-list.1001551.n3.nabble.com/) - Mailing lists dedicated to usage questions and development topics respectively.
 
+## References
+
+<p id="wikipedia-2017">Wikipedia. 2017. “Apache Spark — Wikipedia, the Free Encyclopedia.” <a href="https://en.wikipedia.org/w/index.php?title=Apache_Spark&amp;oldid=781182753" class="uri">https://en.wikipedia.org/w/index.php?title=Apache_Spark&amp;oldid=781182753</a>.</p>
+
 ## License
 
 <p xmlns:dct="http://purl.org/dc/terms/">
 <a rel="license" href="http://creativecommons.org/publicdomain/mark/1.0/">
-<img src="http://i.creativecommons.org/p/mark/1.0/88x31.png"
+<img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/publicdomain.svg"
      style="border-style: none;" alt="Public Domain Mark" />
 </a>
 <br />
@@ -171,3 +209,6 @@ This work (<span property="dct:title">Awesome Spark</span>, by <a href="https://
 
 Apache Spark, Spark, Apache, and the Spark logo are <a href="https://www.apache.org/foundation/marks/">trademarks</a> of
   <a href="http://www.apache.org">The Apache Software Foundation</a>. This compilation is not endorsed by The Apache Software Foundation.
+
+
+Inspired by [sindresorhus/awesome](https://github.com/sindresorhus/awesome).
